@@ -76,6 +76,20 @@ export VOSK_MODEL_PATH="/tmp/vosk-model/vosk-model-small-en-us-0.15"
 
 The webhook responds with a simple echo; extend `app.py` to handle intents and session logic.
 
+## Text-to-Speech (TTS)
+
+This project includes a simple TTS endpoint using `gTTS`.
+
+- Endpoint: `POST /speak`
+- Accepts JSON `{ "text": "..." }` or form field `text`
+- Returns an MP3 audio response containing spoken text
+
+Example usage:
+
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"text": "Hello world"}' http://localhost:5000/speak --output speech.mp3
+```
+
 ## Notes
 
 - `assistant.db` is created next to the Python files and is ignored by Git.

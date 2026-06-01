@@ -34,7 +34,7 @@ def transcribe_file(path: str, language_code: str = 'en-US') -> str:
 
     # VOSK fallback
     try:
-        from offline_stt import transcribe_vosk
+        from .offline_stt import transcribe_vosk
 
         return transcribe_vosk(path)
     except Exception as e:
